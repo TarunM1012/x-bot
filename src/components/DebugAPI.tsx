@@ -42,6 +42,19 @@ const DebugAPI = () => {
     }
   };
 
+  const checkEnvironment = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch("/.netlify/functions/check-env");
+      const data = await response.json();
+      setTestResult(JSON.stringify(data, null, 2));
+    } catch (error) {
+      setTestResult(`Error: ${error}`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="p-4">
       <Card>
@@ -49,9 +62,12 @@ const DebugAPI = () => {
           <CardTitle>API Debug</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <Button onClick={() => testSimple()} disabled={isLoading}>
               Test Simple Function
+            </Button>
+            <Button onClick={() => checkEnvironment()} disabled={isLoading}>
+              Check Environment
             </Button>
             <Button onClick={() => testAPI("/.netlify/functions/generate-tweet")} disabled={isLoading}>
               Test Generate Tweet
