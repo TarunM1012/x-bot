@@ -1,6 +1,9 @@
-import fetch from 'node-fetch';
+// Use global fetch in Netlify Functions environment
+const fetch = globalThis.fetch;
 
 export async function handler(event, context) {
+  console.log('Function called with event:', JSON.stringify(event, null, 2));
+  
   // Enable CORS
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -38,6 +41,8 @@ export async function handler(event, context) {
     }
 
     const openaiApiKey = process.env.OPENAI_API_KEY;
+    
+    console.log('OpenAI API key exists:', !!openaiApiKey);
     
     if (!openaiApiKey) {
       return {
