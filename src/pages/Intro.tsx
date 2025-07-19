@@ -46,7 +46,7 @@ const Intro = () => {
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="text-center mb-16">
           <h1 className="text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
-            Forge Your Digital Voice
+            Auto Generate your tweets
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Unleash the power of AI to create compelling, engaging tweets that resonate with your audience. 
@@ -86,9 +86,9 @@ const Intro = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20 grid md:grid-cols-3 gap-8">
+        {/* <div className="mt-20 grid md:grid-cols-3 gap-8">
           <div className="text-center">
-            <div className="text-4xl font-bold text-cyan-400 mb-2">10K+</div>
+            <div className="text-4xl font-bold text-cyan-400 mb-2">1K+</div>
             <div className="text-gray-400">Tweets Generated</div>
           </div>
           <div className="text-center">
@@ -100,6 +100,7 @@ const Intro = () => {
             <div className="text-gray-400">AI Availability</div>
           </div>
         </div>
+        */}
       </div>
     </div>
   );
