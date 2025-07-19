@@ -69,7 +69,7 @@ const TweetGenerator = () => {
     try {
       const prompt = `Write a tweet based on the idea '${form.idea}' in a ${form.tone} tone, ${form.style} style, and approximately ${form.length} characters long. Make it engaging and suitable for Twitter.`;
 
-      const response = await fetch("/api/generate-tweet", {
+      const response = await fetch("/.netlify/functions/generate-tweet", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
